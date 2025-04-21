@@ -11,7 +11,7 @@ os.environ['TF_ENABLE_ONEDNN_OPTS'] = '0'
 
 if __name__ == '__main__':
     # Load data
-    data = pd.read_csv('data/after_preprocess_data.csv')
+    data = pd.read_csv('data/after_preprocess_data_scaled.csv')
     label = pd.read_csv('data/label.csv').rename(columns=str.lower)
     
     # Experiment parameters
@@ -56,7 +56,7 @@ if __name__ == '__main__':
             history = model.fit(
                 [X_train_wide, X_train_pre], y_train,
                 validation_data=([X_test_wide, X_test_pre], y_test),
-                epochs=100,
+                epochs=200,
                 batch_size=64,
                 verbose=1,
                 callbacks=[metric_cb]
