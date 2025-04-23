@@ -15,7 +15,7 @@ if __name__ == '__main__':
     label = pd.read_csv('data/label.csv').rename(columns=str.lower)
     
     # Experiment parameters
-    train_ratios = [0.7]  # Add more ratios as needed
+    train_ratios = [0.6]  # Add more ratios as needed
     num_runs = 1
 
     for ratio in train_ratios:
